@@ -1,18 +1,25 @@
+package Client;
+
+import Model.EmployeeEntity;
+import Model.JsonPackage;
+import Requests.AddEmployeeRequest;
 import com.google.gson.Gson;
 
 import java.io.PrintWriter;
 import java.net.Socket;
 
 
+
 public class Client {
 
-    public static void main(String[] args) {
+    public void addEmployee(String FirstName)
+    {
         Socket socket;
         try {
             socket = new Socket( "127.0.0.1", 2000);
             PrintWriter writer = new PrintWriter(socket.getOutputStream());
             EmployeeEntity emp = new EmployeeEntity();
-            emp.FirstName = "Bartek";
+            emp.FirstName = FirstName;
             AddEmployeeRequest reg = new AddEmployeeRequest();
             reg.Employee = emp;
             Gson gson = new Gson();
@@ -27,7 +34,7 @@ public class Client {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+
 
 }
