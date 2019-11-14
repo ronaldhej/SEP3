@@ -12,7 +12,7 @@ public class teamGUI implements teamView {
 
     public teamGUI() {
         client = new Client();
-        teamController view = new teamController(this, client);
+        this.teamController = new teamController(this, client);
     }
 
     public String getNameTextFieldValue() {

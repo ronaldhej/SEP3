@@ -5,10 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.TextField;
 
 public class dashBoardGUI implements dashBoardView {
+    dashBoardController dashBoardController;
 
 
     public dashBoardGUI() {
-        dashBoardController view = new dashBoardController(this);
+        this.dashBoardController = new dashBoardController(this);
     }
 
     public void testBtnPressed(ActionEvent actionEvent) {

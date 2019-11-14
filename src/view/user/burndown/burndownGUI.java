@@ -4,8 +4,9 @@ import controller.user.burndown.burndownController;
 import controller.user.dashBoard.dashBoardController;
 
 public class burndownGUI implements burndownView {
+    burndownController burndownController;
 
     public burndownGUI() {
-        burndownController view = new burndownController(this);
+        this.burndownController = new burndownController(this);
     }
 }
