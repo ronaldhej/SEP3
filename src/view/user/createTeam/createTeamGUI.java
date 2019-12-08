@@ -1,6 +1,5 @@
 package view.user.createTeam;
 
-import Client.Client;
 import controller.user.createTeam.createTeamController;
 import javafx.beans.Observable;
 import javafx.collections.FXCollections;
@@ -14,15 +13,14 @@ import javafx.scene.control.TextField;
 import java.lang.reflect.AccessibleObject;
 
 public class createTeamGUI implements createTeamView {
-    public Client client;
+
     public createTeamController createTeamController;
     public ListView employeeListView;
     public TextField filterInput;
     public ListView teamListView;
 
     public createTeamGUI() {
-        client = new Client();
-        createTeamController = new createTeamController(this, client);
+        createTeamController = new createTeamController(this);
     }
 
     @FXML
