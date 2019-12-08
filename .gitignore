@@ -18,4 +18,5 @@ out/production/SEP_3/view/user/mainUser/mainUserGUI.class
 out/production/SEP_3/view/user/mainUser/mainUserView.class
 out/production/SEP_3/view/user/report/reportGUI.class
 out/production/SEP_3/view/user/report/reportView.class
+src/module-info.java
 SEP_3.iml

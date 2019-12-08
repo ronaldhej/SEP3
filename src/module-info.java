@@ -3,6 +3,8 @@ module SEP_3 {
     requires javafx.controls;
     requires javafx.graphics;
 
+    // git ignore test
+
     exports main to javafx.graphics;
     exports view.login to javafx.fxml;
     exports view.user.mainUser to javafx.fxml;
