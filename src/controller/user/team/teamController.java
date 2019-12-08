@@ -1,6 +1,5 @@
 package controller.user.team;
 
-import Client.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -9,11 +8,9 @@ import view.user.team.teamView;
 
 public class teamController {
     public static teamView view;
-    public Client client;
 
-    public teamController(teamView view, Client client) {
+    public teamController(teamView view) {
         this.view = view;
-        this.client = client;
     }
 
 

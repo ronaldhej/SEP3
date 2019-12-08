@@ -1,6 +1,5 @@
 package view.user.team;
 
-import Client.Client;
 import Model.Team;
 import controller.user.team.teamController;
 import javafx.event.ActionEvent;
@@ -13,11 +12,9 @@ public class teamGUI implements teamView {
     public TableView teamTableView;
     public Button createTeamBtn;
     private teamController teamController;
-    public Client client;
 
     public teamGUI() {
-        client = new Client();
-        this.teamController = new teamController(this, client);
+        this.teamController = new teamController(this);
     }
 
 

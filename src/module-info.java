@@ -2,7 +2,6 @@ module SEP_3 {
     requires javafx.fxml;
     requires javafx.controls;
     requires javafx.graphics;
-    requires com.google.gson;
 
     exports main to javafx.graphics;
     exports view.login to javafx.fxml;
