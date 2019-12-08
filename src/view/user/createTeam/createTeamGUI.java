@@ -11,6 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 import java.lang.reflect.AccessibleObject;
+import java.util.List;
 
 public class createTeamGUI implements createTeamView {
 
@@ -44,30 +45,34 @@ public class createTeamGUI implements createTeamView {
 
     }
 
-    public String getSelectedItem() {
+    public String getSelectedEmployeeItem() {
         return (String) employeeListView.getSelectionModel().getSelectedItem();
     }
 
-    public void addToTeamList() {
-        teamListView.getItems().add(getSelectedItem());
-
+    public String getSelectedTeamMemberItem() {
+        return (String) teamListView.getSelectionModel().getSelectedItem();
     }
-
-    public void removeFromTeamList() {
-
-    }
-
 
     public void createTeamBtnPressed(ActionEvent actionEvent) throws Exception {
-        System.out.println("Refresh Button pressed");
         createTeamController.refreshTeamGUI();
+        getTeamMembers();
     }
 
     public void addToTeamBtnPressed() {
-
+        teamListView.getItems().add(getSelectedEmployeeItem());
     }
 
     public void removeFromTeamBtnPressed() {
+        teamListView.getItems().remove(teamListView.getSelectionModel().getSelectedIndex());
+    }
 
+    public List<String> getTeamMembers() {
+        List<String> teamMembers = teamListView.getItems();
+        for (String member:teamMembers
+        ) {
+            System.out.println(member);
+
+        }
+        return teamMembers;
     }
 }
