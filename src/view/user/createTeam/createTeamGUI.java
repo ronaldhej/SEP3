@@ -19,6 +19,7 @@ public class createTeamGUI implements createTeamView {
     public ListView employeeListView;
     public TextField filterInput;
     public ListView teamListView;
+    ObservableList<String> employees = FXCollections.observableArrayList();
 
     public createTeamGUI() {
         createTeamController = new createTeamController(this);
@@ -26,7 +27,6 @@ public class createTeamGUI implements createTeamView {
 
     @FXML
     public void initialize() {
-        ObservableList<String> employees = FXCollections.observableArrayList();
         employees.add("Ronald");
         employees.add("Pdawg");
         employees.add("Bobby");
@@ -60,10 +60,14 @@ public class createTeamGUI implements createTeamView {
 
     public void addToTeamBtnPressed() {
         teamListView.getItems().add(getSelectedEmployeeItem());
+        employees.remove((String) employeeListView.getSelectionModel().getSelectedItem());
+        employeeListView.setItems(employees);
     }
 
     public void removeFromTeamBtnPressed() {
+        employees.add(getSelectedTeamMemberItem());
         teamListView.getItems().remove(teamListView.getSelectionModel().getSelectedIndex());
+        employeeListView.setItems(employees);
     }
 
     public List<String> getTeamMembers() {
