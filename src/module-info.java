@@ -2,6 +2,7 @@ module SEP_3 {
     requires javafx.fxml;
     requires javafx.controls;
     requires javafx.graphics;
+    requires com.google.gson;
 
     exports main to javafx.graphics;
     exports view.login to javafx.fxml;
@@ -10,6 +11,8 @@ module SEP_3 {
     exports view.user.burndown to javafx.fxml;
     exports view.user.report to javafx.fxml;
     exports view.user.team to javafx.fxml;
+    exports view.user.createTeam to javafx.fxml;
+    exports Model to java.base;
 
 
     opens view.login to javafx.fxml;
@@ -18,4 +21,5 @@ module SEP_3 {
     opens view.user.burndown to javafx.fxml;
     opens view.user.report to javafx.fxml;
     opens view.user.team to javafx.fxml;
+    opens view.user.createTeam to javafx.fxml;
 }

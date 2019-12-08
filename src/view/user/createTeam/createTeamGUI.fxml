@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="383.0" prefWidth="733.0" style="-fx-background-color: #CDC6AE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.createTeam.createTeamGUI">
+   <children>
+      <Button layoutX="582.0" layoutY="319.0" mnemonicParsing="false" onAction="#createTeamBtnPressed" prefHeight="50.0" prefWidth="135.0" text="Create Team">
+         <font>
+            <Font size="17.0" />
+         </font></Button>
+      <ListView fx:id="employeeListView" layoutX="14.0" layoutY="84.0" prefHeight="162.0" prefWidth="268.0" />
+      <TextField layoutX="106.0" layoutY="332.0" prefHeight="26.0" prefWidth="214.0" />
+      <Label layoutX="54.0" layoutY="37.0" text="Employees">
+         <font>
+            <Font size="29.0" />
+         </font></Label>
+      <Label layoutX="20.0" layoutY="327.0" text="Task">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <ListView fx:id="memberListView" layoutX="449.0" layoutY="84.0" prefHeight="162.0" prefWidth="268.0" />
+      <Label layoutX="516.0" layoutY="37.0" text="Members">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <Button layoutX="294.0" layoutY="134.0" mnemonicParsing="false" onAction="#addToTeamBtnPressed" prefHeight="26.0" prefWidth="147.0" text="Add to Team" />
+      <Button layoutX="294.0" layoutY="179.0" mnemonicParsing="false" onAction="#removeFromTeamBtnPressed" text="Remove from Team" />
+      <TextField layoutX="111.0" layoutY="261.0" />
+      <Label layoutX="36.0" layoutY="266.0" text="Search" />
+   </children>
+</AnchorPane>
