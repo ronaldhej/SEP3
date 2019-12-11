@@ -11,6 +11,7 @@ public class mainUserGUI implements mainUserView {
     public Pane reportPane;
     public Pane burndownPane;
     public Pane teamPane;
+    public Pane taskPane;
 
     private mainUserController mainUserGUIController;
     public Button btnLogout;
@@ -44,5 +45,9 @@ public class mainUserGUI implements mainUserView {
 
     public void teamButtonPressed(ActionEvent actionEvent) {
         teamPane.toFront();
+    }
+
+    public void taskButtonPressed(ActionEvent actionEvent) {
+        taskPane.toFront();
     }
 }

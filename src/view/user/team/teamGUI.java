@@ -41,6 +41,5 @@ public class teamGUI implements teamView {
 
     public void refresh() {
         System.out.println("Refreshed successfully");
-        createTeamBtn.setText("Success!");
     }
 }

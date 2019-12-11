@@ -18,4 +18,9 @@ public class createTeamController {
     public void refreshTeamGUI() throws Exception {
         teamController.refreshScene();
     }
+
+    public void getTeamInfo() {
+        view.getTeamTask();
+        view.getTeamMembers();
+    }
 }

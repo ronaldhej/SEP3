@@ -19,6 +19,7 @@ public class createTeamGUI implements createTeamView {
     public ListView employeeListView;
     public TextField filterInput;
     public ListView teamListView;
+    public TextField taskInput;
     ObservableList<String> employees = FXCollections.observableArrayList();
 
     public createTeamGUI() {
@@ -78,5 +79,9 @@ public class createTeamGUI implements createTeamView {
 
         }
         return teamMembers;
+    }
+
+    public String getTeamTask() {
+        return taskInput.getText();
     }
 }
