@@ -81,11 +81,11 @@ namespace WebApp.Client
             NetworkStream nwStream = client.GetStream();
             byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
-            JsonPackage json = 
 
 
 
             client.Close();
+            return "a";
 
         }
 

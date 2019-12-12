@@ -12,3 +12,6 @@ RestServer/WebApp/Properties/launchSettings.json
 RestServer/WebApp/obj/
 RestServer/WebApp.sln
 GUIClient.iml
+RestServer/.idea/
+RestServer/WebApp/.idea/.idea.WebApp/
+SEP3.iml

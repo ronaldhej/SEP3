@@ -24,18 +24,6 @@ namespace WebApp.Controllers
         }
 
 
-        // GET: api/Sprints1/5
-        [HttpGet("{id}")]
-        public ActionResult<Sprint> GetSprint(int id)
-        {
-            tescik test = new tescik();
-            var sprint = test.Sprintget("a", 1);
-            Client.Client cl = new Client.Client();
-
-            return sprint;
-        }
-
-
         // POST: api/Sprints1/
         [HttpPost("{name, contributor, id}")]
         public void PostSprint(String name, String contributor, int id)
