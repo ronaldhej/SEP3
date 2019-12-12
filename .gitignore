@@ -1,4 +1,14 @@
 /out/
 /.idea/
 /.gitignore
+
+
+
+RestServer/WebApp/bin/Debug
+RestServer/WebApp/appsettings.Development.json
+RestServer/WebApp/appsettings.json
+RestServer/WebApp/WebApp.csproj
+RestServer/WebApp/Properties/launchSettings.json
+RestServer/WebApp/obj/
+RestServer/WebApp.sln
 GUIClient.iml
