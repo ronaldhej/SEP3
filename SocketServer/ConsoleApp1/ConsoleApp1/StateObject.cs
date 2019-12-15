@@ -85,8 +85,8 @@ namespace Viaven
                     Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
                         content.Length, content);
 
-                var controller = new EmployeeController();
-                    controller.HandleRequests(content);
+                var controller = new RequestHandler();
+                    controller.ForwardRequest(content);
 
             }
         }

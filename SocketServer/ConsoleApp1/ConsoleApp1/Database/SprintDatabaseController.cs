@@ -14,7 +14,8 @@ public static class SprintDatabaseController
         var con = new SQLiteConnection(ConnectionString);
         con.Open();
         var cmd = new SQLiteCommand(con);
-        cmd.CommandText = "INSERT INTO sprint(SprintName, Contributor) VALUES( '" + sprint.Name + "'" + sprint.constributor + "')";
+        Console.WriteLine(sprint.Contributor);
+        cmd.CommandText = "INSERT INTO sprint(SprintName, Contributor) VALUES('" + sprint.Name + "', '" + sprint.Contributor + "');";
         cmd.ExecuteNonQuery();
         con.Close();
 

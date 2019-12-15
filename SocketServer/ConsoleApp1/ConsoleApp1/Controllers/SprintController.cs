@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Viaven.Requests;
 using Newtonsoft.Json;
-using Viaven.Requests.SprintRequests;
 
 
 namespace Viaven.Controllers

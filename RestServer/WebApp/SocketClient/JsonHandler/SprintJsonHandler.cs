@@ -4,28 +4,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebApp.SocketClient.Model;
 using Newtonsoft.Json;
+using WebApp.SocketClient.Requests;
 
-namespace WebApp.SocketClient.Requests
+namespace WebApp.SocketClient.JsonHandler
 {
-    public class AddSprintRequest
+    public class SprintJsonHandler
     {
 
-        public String get(String name, String contributor, int id)
-        {
+        public String Add(String name, String contributor, String id)
 
+        {
+            SprintRequest sprintRequest = new SprintRequest();
             SprintEntity sprint = new SprintEntity();
             sprint.SetValues(name, contributor, id);
+            sprintRequest.sprint = sprint;
             JsonPackage package = new JsonPackage();
             package.Type = "AddRequest";
-            package.Content = sprint;
+            package.ForwardTo = "SprintController";
+            package.Content = sprintRequest;
             String jsonpackage = JsonConvert.SerializeObject(package);
 
             return jsonpackage;
 
 
         }
-
-    public SprintEntity sprint = new SprintEntity();
 
     }
 }

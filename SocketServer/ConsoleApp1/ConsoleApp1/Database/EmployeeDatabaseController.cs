@@ -54,7 +54,7 @@ public static class EmployeeDatabaseController
 
         employeeRequest.Employee = emp;
         JsonPackage package = new JsonPackage();
-        package.Content = employeeRequest;
+        //package.Content = employeeRequest;
         string jsonpackage = JsonConvert.SerializeObject(package);
         return jsonpackage;
 

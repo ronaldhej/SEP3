@@ -17,8 +17,9 @@ namespace WebApp.SocketClient.JsonHandler
             EmployeeEntity employee = new EmployeeEntity();
             employee.SetValues(name);
             JsonPackage package = new JsonPackage();
-            AddEmployeeRequest emp = new AddEmployeeRequest();
+            EmployeeRequest emp = new EmployeeRequest();
             emp.Employee = employee;
+            package.ForwardTo = "EmployeeController";
             package.Type = "AddRequest";
             package.Content = emp;
             String jsonpackage = JsonConvert.SerializeObject(package);
@@ -33,9 +34,10 @@ namespace WebApp.SocketClient.JsonHandler
             EmployeeEntity employee = new EmployeeEntity();
             employee.setId(id);
             JsonPackage package = new JsonPackage();
-            AddEmployeeRequest emp = new AddEmployeeRequest();
+            EmployeeRequest emp = new EmployeeRequest();
             emp.Employee = employee;
             package.Type = "RemoveRequest";
+            package.ForwardTo = "EmployeeController";
             package.Content = emp;
             String jsonpackage = JsonConvert.SerializeObject(package);
 
@@ -47,9 +49,10 @@ namespace WebApp.SocketClient.JsonHandler
             EmployeeEntity employee = new EmployeeEntity();
             employee.setId(id);
             JsonPackage package = new JsonPackage();
-            AddEmployeeRequest emp = new AddEmployeeRequest();
+            EmployeeRequest emp = new EmployeeRequest();
             emp.Employee = employee;
             package.Type = "GetOneRequest";
+            package.ForwardTo = "EmployeeController";
             package.Content = emp;
             String jsonpackage = JsonConvert.SerializeObject(package);
 

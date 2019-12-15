@@ -9,7 +9,7 @@ namespace Viaven.Entities
     public class SprintEntity
     {
         public string Name { get; set; }
-        public string constributor { get; set; }
-        public int id { get; set; }
+        public string Contributor { get; set; }
+        public string Id { get; set; }
     }
 }

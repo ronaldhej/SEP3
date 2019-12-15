@@ -7,7 +7,7 @@ using WebApp.SocketClient.Model;
 
 namespace WebApp.SocketClient.Requests
 {
-    public class AddEmployeeRequest
+    public class EmployeeRequest
     {
         public EmployeeEntity Employee = new EmployeeEntity();
 

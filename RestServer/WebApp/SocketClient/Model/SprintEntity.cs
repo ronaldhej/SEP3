@@ -9,10 +9,10 @@ namespace WebApp.SocketClient.Model
     {
 
         public String Name { get; set; }
-        public int Id { get; set; }
+        public String Id { get; set; }
         public String Contributor { get; set; }
 
-        public void SetValues(String name, String Contributor, int Id)
+        public void SetValues(String name, String Contributor, String Id)
         {
             this.Name = name;
             this.Id = Id;

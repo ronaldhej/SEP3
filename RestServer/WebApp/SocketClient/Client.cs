@@ -14,15 +14,20 @@ namespace WebApp.Client
     public class Client
     {
         EmployeeJsonHandler employeeJsonHandler = new EmployeeJsonHandler();
+        SprintJsonHandler SprintJsonHandler = new SprintJsonHandler();
         const int PORT_NO = 2000;
         const string SERVER_IP = "127.0.0.1";
 
         //------------------------------------------SPRINTS-------------------------------------------------
 
-        public void AddSprint(String contributor, String name, int id)
+        public void AddSprint(String contributor, String name, String Id)
         {
-            AddSprintRequest request = new AddSprintRequest();
-            String textToSend = request.get(name, contributor, id);
+            String contr = "a";
+            string namex = "b";
+            string idx = "1";
+            SprintRequest request = new SprintRequest();
+            
+            String textToSend = SprintJsonHandler.Add(namex, contr, idx);
 
             TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
             NetworkStream nwStream = client.GetStream();

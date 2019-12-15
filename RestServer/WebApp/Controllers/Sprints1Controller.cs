@@ -26,9 +26,10 @@ namespace WebApp.Controllers
 
         // POST: api/Sprints1/
         [HttpPost("{name, contributor, id}")]
-        public void PostSprint(String name, String contributor, int id)
+        public void PostSprint(String name, String contributor, String Id)
         {
             Client.Client cl = new Client.Client();
+            cl.AddSprint(name, contributor, Id);
             cl.AddEmployee();
 
         }
