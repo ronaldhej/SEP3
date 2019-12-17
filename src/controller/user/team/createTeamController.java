@@ -1,11 +1,7 @@
-package controller.user.createTeam;
+package controller.user.team;
 
 
-import controller.user.team.teamController;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.layout.Pane;
-import view.user.createTeam.createTeamView;
+import view.user.team.createTeam.createTeamView;
 
 public class createTeamController {
     public createTeamView view;
@@ -20,7 +16,6 @@ public class createTeamController {
     }
 
     public void getTeamInfo() {
-        view.getTeamTask();
         view.getTeamMembers();
     }
 }

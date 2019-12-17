@@ -9,10 +9,9 @@
          <children>
             <Button fx:id="btnLogout" layoutY="759.0" mnemonicParsing="false" onAction="#logoutButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686A; -fx-background-radius: 0;" styleClass="panelButton" text="Logout" textFill="#cdc6ae" />
             <Button mnemonicParsing="false" onAction="#dashBoardButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686A; -fx-background-radius: 0;" styleClass="panelButton" text="Dash Board" textFill="#cdc6ae" />
-            <Button layoutY="49.0" mnemonicParsing="false" onAction="#reportButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686A; -fx-background-radius: 0;" styleClass="panelButton" text="Reports" textFill="#cdc6ae" />
-            <Button layoutY="98.0" mnemonicParsing="false" onAction="#burndownButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686A; -fx-background-radius: 0;" styleClass="panelButton" text="View Burndown" textFill="#cdc6ae" />
-            <Button layoutY="147.0" mnemonicParsing="false" onAction="#teamButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686A; -fx-background-radius: 0;" styleClass="panelButton" text="Team Management" textFill="#cdc6ae" />
-            <Button layoutY="196.0" mnemonicParsing="false" onAction="#taskButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686A; -fx-background-radius: 0;" styleClass="panelButton" text="Tasks" textFill="#cdc6ae" />
+            <Button layoutY="49.0" mnemonicParsing="false" onAction="#burndownButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686A; -fx-background-radius: 0;" styleClass="panelButton" text="View Burndown" textFill="#cdc6ae" />
+            <Button layoutY="98.0" mnemonicParsing="false" onAction="#teamButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686A; -fx-background-radius: 0;" styleClass="panelButton" text="Team Management" textFill="#cdc6ae" />
+            <Button layoutY="147.0" mnemonicParsing="false" onAction="#taskButtonPressed" prefHeight="49.0" prefWidth="195.0" style="-fx-background-color: #38686a; -fx-background-radius: 0;" styleClass="panelButton" text="Tasks" textFill="#cdc6ae" />
          </children>
       </AnchorPane>
       <StackPane layoutX="195.0" prefHeight="808.0" prefWidth="1038.0">
@@ -22,9 +21,6 @@
             </Pane>
             <Pane fx:id="taskPane" layoutX="10.0" layoutY="10.0" prefHeight="808.0" prefWidth="1038.0">
                <fx:include source="../task/taskGUI.fxml" />
-            </Pane>
-            <Pane fx:id="reportPane" prefHeight="808.0" prefWidth="1038.0">
-               <fx:include source="../report/reportGUI.fxml" />
             </Pane>
             <Pane fx:id="burndownPane" prefHeight="808.0" prefWidth="1038.0">
                <fx:include source="../burndown/burndownGUI.fxml" />

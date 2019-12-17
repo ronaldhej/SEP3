@@ -6,17 +6,16 @@
 
 <AnchorPane prefHeight="808.0" prefWidth="1038.0" style="-fx-background-color: #CDC6AE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.task.taskGUI">
    <children>
-      <Button fx:id="testButton" layoutX="779.0" layoutY="672.0" mnemonicParsing="false" onAction="#testBtnPressed" prefHeight="71.0" prefWidth="134.0" text="Test">
-         <font>
-            <Font size="31.0" />
-         </font>
-      </Button>
-      <ListView layoutX="14.0" layoutY="14.0" prefHeight="502.0" prefWidth="1009.0" />
-      <Label layoutX="14.0" layoutY="526.0" text="Search">
+      <ListView fx:id="taskListView" layoutX="14.0" layoutY="14.0" prefHeight="733.0" prefWidth="1009.0" />
+      <Label layoutX="14.0" layoutY="761.0" text="Filter">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <TextField layoutX="111.0" layoutY="528.0" />
+      <TextField fx:id="filterInput" layoutX="111.0" layoutY="763.0" />
+      <Button layoutX="339.0" layoutY="763.0" mnemonicParsing="false" onAction="#createTaskBtnPressed" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Create Task" textFill="#cdc6ae" />
+      <Button layoutX="463.0" layoutY="763.0" mnemonicParsing="false" onAction="#editTaskBtnPressed" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Edit Task" textFill="#cdc6ae" />
+      <Button layoutX="567.0" layoutY="763.0" mnemonicParsing="false" onAction="#removeTaskBtnPressed" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Remove Task" textFill="#cdc6ae" />
+      <Button layoutX="695.0" layoutY="763.0" mnemonicParsing="false" onAction="#assignTaskBtnPressed" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Assign Task" textFill="#cdc6ae" />
    </children>
 </AnchorPane>

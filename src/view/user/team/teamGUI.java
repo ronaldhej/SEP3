@@ -8,7 +8,6 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 
 public class teamGUI implements teamView {
-    public TextField nameTextField;
     public TableView teamTableView;
     public Button createTeamBtn;
     private teamController teamController;
@@ -40,6 +39,8 @@ public class teamGUI implements teamView {
     }
 
     public void refresh() {
+        // refresh tableView of teams
         System.out.println("Refreshed successfully");
     }
+
 }

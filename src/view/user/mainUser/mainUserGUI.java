@@ -8,7 +8,6 @@ import javafx.stage.Stage;
 
 public class mainUserGUI implements mainUserView {
     public Pane dashBoardPane;
-    public Pane reportPane;
     public Pane burndownPane;
     public Pane teamPane;
     public Pane taskPane;
@@ -32,10 +31,6 @@ public class mainUserGUI implements mainUserView {
 
     public void dashBoardButtonPressed(ActionEvent actionEvent) {
         dashBoardPane.toFront();
-    }
-
-    public void reportButtonPressed(ActionEvent actionEvent) {
-        reportPane.toFront();
     }
 
     public void burndownButtonPressed(ActionEvent actionEvent) {

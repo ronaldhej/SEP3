@@ -17,8 +17,9 @@ public class teamController {
     public void createTeamWindow() throws Exception {
         try
         {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/user/createTeam/createTeamGUI.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/view/user/team/createTeam/createTeamGUI.fxml"));
             Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource("/stylesheets/createTeamGUI.css").toExternalForm());
             Stage primaryStage = new Stage();
 
             primaryStage.setScene(scene);

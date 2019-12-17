@@ -1,7 +1,6 @@
-package view.user.createTeam;
+package view.user.team.createTeam;
 
-import controller.user.createTeam.createTeamController;
-import javafx.beans.Observable;
+import controller.user.team.createTeamController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -10,7 +9,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-import java.lang.reflect.AccessibleObject;
 import java.util.List;
 
 public class createTeamGUI implements createTeamView {
@@ -19,7 +17,6 @@ public class createTeamGUI implements createTeamView {
     public ListView employeeListView;
     public TextField filterInput;
     public ListView teamListView;
-    public TextField taskInput;
     ObservableList<String> employees = FXCollections.observableArrayList();
 
     public createTeamGUI() {
@@ -32,18 +29,11 @@ public class createTeamGUI implements createTeamView {
         employees.add("Pdawg");
         employees.add("Bobby");
         employees.add("Dziugas");
-        FilteredList<String> filteredEmployees = new FilteredList<>(employees, s -> true);
-        filterInput.textProperty().addListener(obs -> {
-            String filter = filterInput.getText();
-            if(filter == null || filter.length() == 0) {
-                filteredEmployees.setPredicate(s ->  true);
-            } else {
-                filteredEmployees.setPredicate(s -> s.toLowerCase().contains(filter.toLowerCase()));
-            }
-        });
+        searchFilter();
+    }
 
-        employeeListView.setItems(filteredEmployees);
-
+    public void clearFilterInput() {
+        filterInput.setText("");
     }
 
     public String getSelectedEmployeeItem() {
@@ -63,12 +53,16 @@ public class createTeamGUI implements createTeamView {
         teamListView.getItems().add(getSelectedEmployeeItem());
         employees.remove((String) employeeListView.getSelectionModel().getSelectedItem());
         employeeListView.setItems(employees);
+        clearFilterInput();
+        searchFilter();
     }
 
     public void removeFromTeamBtnPressed() {
         employees.add(getSelectedTeamMemberItem());
         teamListView.getItems().remove(teamListView.getSelectionModel().getSelectedIndex());
         employeeListView.setItems(employees);
+        searchFilter();
+        clearFilterInput();
     }
 
     public List<String> getTeamMembers() {
@@ -81,7 +75,17 @@ public class createTeamGUI implements createTeamView {
         return teamMembers;
     }
 
-    public String getTeamTask() {
-        return taskInput.getText();
+    public void searchFilter() {
+        FilteredList<String> filteredEmployees = new FilteredList<>(employees, s -> true);
+        filterInput.textProperty().addListener(obs -> {
+            String filter = filterInput.getText();
+            if(filter == null || filter.length() == 0) {
+                filteredEmployees.setPredicate(s ->  true);
+            } else {
+                filteredEmployees.setPredicate(s -> s.toLowerCase().contains(filter.toLowerCase()));
+            }
+        });
+
+        employeeListView.setItems(filteredEmployees);
     }
 }

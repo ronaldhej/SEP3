@@ -1,10 +1,10 @@
-package view.user.createTeam;
+package view.user.team.createTeam;
 
 import java.util.List;
 
 public interface createTeamView {
+    void clearFilterInput();
     String getSelectedEmployeeItem();
     String getSelectedTeamMemberItem();
-    String getTeamTask();
     List<String> getTeamMembers();
 }
