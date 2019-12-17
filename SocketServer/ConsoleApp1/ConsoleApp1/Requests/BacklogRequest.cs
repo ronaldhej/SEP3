@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using Viaven.Entities;
 
 namespace Viaven.Requests
 {
-    class AddSprintRequest
+    public class BacklogRequest
     {
-        public SprintEntity Sprint;
+        public BacklogEntity backlogEntity = new BacklogEntity();
     }
 }

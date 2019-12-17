@@ -23,9 +23,12 @@ public static class DbContext
         cmd.CommandText = @"CREATE TABLE sprint(Id integer primary key autoincrement,
                      SprintName varchar(255), Contributor varchar(255))";
         cmd.ExecuteNonQuery();
+        cmd.CommandText = @"CREATE TABLE backlog(Id integer primary key autoincrement,
+                     task varchar(255), points varchar(255), priority varchar(255))";
+        cmd.ExecuteNonQuery();
 
 
-        Console.WriteLine("Table cars created");
+        Console.WriteLine("Table created");
         con.Close();
        
     }

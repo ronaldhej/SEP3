@@ -7,14 +7,16 @@ using WebApp.SocketClient.Model;
 using WebApp.SocketClient.Requests;
 using Newtonsoft.Json;
 using WebApp.SocketClient.JsonHandler;
+using System.Collections.Generic;
  
 
 namespace WebApp.Client
 {
-    public class Client
+    public class SocketRouter
     {
         EmployeeJsonHandler employeeJsonHandler = new EmployeeJsonHandler();
         SprintJsonHandler SprintJsonHandler = new SprintJsonHandler();
+        BacklogJsonHandler backlogJsonHandler = new BacklogJsonHandler();
         const int PORT_NO = 2000;
         const string SERVER_IP = "127.0.0.1";
 
@@ -94,6 +96,23 @@ namespace WebApp.Client
 
         }
 
+
+
+        //-----------------------------BACKLOG-----------------------------------------------
+
+        public void CreateBacklog(List<BacklogItemEntity> items)
+        {
+
+            string textToSend = backlogJsonHandler.Create(items);
+            TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
+            NetworkStream nwStream = client.GetStream();
+            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
+            nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+            client.Close();
+
+
+
+        }
 
 
 

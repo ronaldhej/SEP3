@@ -10,7 +10,7 @@ namespace WebApp.SocketClient.Requests
     public class EmployeeRequest
     {
         public EmployeeEntity Employee = new EmployeeEntity();
-
+        
     }
 }
 

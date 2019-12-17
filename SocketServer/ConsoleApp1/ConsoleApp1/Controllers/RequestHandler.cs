@@ -16,6 +16,7 @@ namespace Viaven.Controllers
     {
         EmployeeController empController = new EmployeeController();
         SprintController sprController = new SprintController();
+        BacklogController blController = new BacklogController();
 
         public void ForwardRequest(string json)
         {
@@ -29,7 +30,9 @@ namespace Viaven.Controllers
                 case ("SprintController"):
                     sprController.HandleRequest(json);
                     break;
-
+                case ("BacklogController"):
+                    blController.HandleRequest(json);
+                    break;
             }
         }
 

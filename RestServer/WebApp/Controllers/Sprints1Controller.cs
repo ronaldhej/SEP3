@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Data;
 using WebApp.Client;
-
+using WebApp.SocketClient.Model;
 
 namespace WebApp.Controllers
 {
@@ -25,12 +25,20 @@ namespace WebApp.Controllers
 
 
         // POST: api/Sprints1/
-        [HttpPost("{name, contributor, id}")]
+        [HttpPost]
         public void PostSprint(String name, String contributor, String Id)
         {
-            Client.Client cl = new Client.Client();
-            cl.AddSprint(name, contributor, Id);
-            cl.AddEmployee();
+            List<BacklogItemEntity> items = new List<BacklogItemEntity>();
+            BacklogItemEntity backlogItem = new BacklogItemEntity();
+            BacklogItemEntity backlogItem2 = new BacklogItemEntity();
+            backlogItem.task = "lol";
+            backlogItem.points = "a";
+            backlogItem2.task = "xd";
+            backlogItem2.points = "5";
+            items.Add(backlogItem);
+            items.Add(backlogItem2);
+            Client.SocketRouter cl = new Client.SocketRouter();
+            cl.CreateBacklog(items);
 
         }
 
@@ -39,7 +47,7 @@ namespace WebApp.Controllers
         public void DeleteSprint(int id)
         {
 
-            Client.Client cl = new Client.Client();
+            Client.SocketRouter cl = new Client.SocketRouter();
             cl.RemoveEmployee();
 
         }

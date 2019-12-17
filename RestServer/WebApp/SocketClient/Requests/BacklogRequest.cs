@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApp.SocketClient.Model;
 
 namespace WebApp.SocketClient.Requests
 {
-    public class RemoveEmployeeRequest
+    public class BacklogRequest
     {
-        public string Id;
+        public BacklogEntity backlogEntity = new BacklogEntity();
     }
 }
