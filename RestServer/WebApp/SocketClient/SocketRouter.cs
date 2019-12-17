@@ -22,14 +22,14 @@ namespace WebApp.Client
 
         //------------------------------------------SPRINTS-------------------------------------------------
 
-        public void AddSprint(String contributor, String name, String Id)
+        public void AddSprint(String task, String name)
         {
             String contr = "a";
             string namex = "b";
             string idx = "1";
             SprintRequest request = new SprintRequest();
             
-            String textToSend = SprintJsonHandler.Add(namex, contr, idx);
+            String textToSend = SprintJsonHandler.Add(name, task);
 
             TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
             NetworkStream nwStream = client.GetStream();
@@ -44,16 +44,45 @@ namespace WebApp.Client
 
         }
 
-        public void GetSprint(int id)
+        public void GetSprint(string id)
         {
 
         }
 
+        public void AssignToTeam(string id, string AssignedToTeam)
+        {
+            SprintRequest request = new SprintRequest();
+
+            String textToSend = SprintJsonHandler.AssignToTeam(id, AssignedToTeam);
+
+            TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
+            NetworkStream nwStream = client.GetStream();
+
+            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
+            nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+            client.Close();
+        }
+
+        public void AssignToPerson(string id, string AssignedToTeam)
+        {
+
+        }
+
+        public List<SprintEntity> GetSprintByTeam(string id)
+        {
+
+        }
+
+        public List<SprintEntity> GetSprintByPerson(int id)
+        {
+            
+        }
+
+
         //----------------------------------------------EMPLOYEE-------------------------------------------
 
-        public void AddEmployee()
+        public void AddEmployee(string name)
         {
-            string name = "andrzej";
             String textToSend = employeeJsonHandler.Add(name);
 
             TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
@@ -64,9 +93,8 @@ namespace WebApp.Client
             client.Close();
         }
 
-        public void RemoveEmployee()
+        public void RemoveEmployee(string id)
         {
-            string id = "1";
             string textToSend = employeeJsonHandler.Remove(id);
 
             TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
@@ -79,9 +107,8 @@ namespace WebApp.Client
 
         }
 
-        public string GetOneEmployee()
+        public string GetOneEmployee(string id)
         {
-            string id = "2";
             string textToSend = employeeJsonHandler.Remove(id);
 
             TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
@@ -95,6 +122,8 @@ namespace WebApp.Client
             return "a";
 
         }
+
+        public List<EmployeeEntity> 
 
 
 
