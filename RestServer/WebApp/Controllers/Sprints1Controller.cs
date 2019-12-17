@@ -48,7 +48,7 @@ namespace WebApp.Controllers
         {
 
             Client.SocketRouter cl = new Client.SocketRouter();
-            cl.RemoveEmployee();
+
 
         }
 

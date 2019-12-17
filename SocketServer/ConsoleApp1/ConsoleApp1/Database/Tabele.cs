@@ -26,6 +26,9 @@ public static class DbContext
         cmd.CommandText = @"CREATE TABLE backlog(Id integer primary key autoincrement,
                      task varchar(255), points varchar(255), priority varchar(255))";
         cmd.ExecuteNonQuery();
+        cmd.CommandText = @"CREATE TABLE TaskAssigment(Id integer primary key autoincrement,
+                     SprintId varchar(255), AssignedToTeam varchar(255), AssignedToPerson varchar(255))";
+        cmd.ExecuteNonQuery();
 
 
         Console.WriteLine("Table created");

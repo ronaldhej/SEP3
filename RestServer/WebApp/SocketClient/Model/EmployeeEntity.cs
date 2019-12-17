@@ -10,16 +10,19 @@ namespace WebApp.SocketClient.Model
 
         public string FirstName { get; set; }
         public string Id { get; set; }
+        public string Password { get; set; }
 
-        public void SetValues(string name)
+        public void SetValues(string name, string password)
         {
             this.FirstName = name;
+            this.Password = password;
         }
 
         public void setId(string id)
         {
             this.Id = id;
         }
+
 
     }
 

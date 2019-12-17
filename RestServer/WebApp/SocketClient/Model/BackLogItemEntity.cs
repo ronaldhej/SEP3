@@ -10,6 +10,7 @@ namespace WebApp.SocketClient.Model
         public string task;
         public string points;
         public string priority;
+        public int Id;
 
         public void SetValues(string task, string points, string priority)
         {

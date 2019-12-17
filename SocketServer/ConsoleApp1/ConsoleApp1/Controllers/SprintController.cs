@@ -23,6 +23,9 @@ namespace Viaven.Controllers
                 case ("RemoveRequest"):
                      //SprintDatabaseController.RemoveSprint((request.Content.ToObject<RemoveSprintRequest>()).Sprint);
                     break;
+                case ("AssignRequest"):
+                    SprintDatabaseController.AssignToTeam((request.Content.ToObject<SprintRequest>().Sprint.Id));
+                    break;
 
             }
         }

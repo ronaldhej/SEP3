@@ -20,7 +20,7 @@ public static class SprintDatabaseController
 
     }
 
-    public static void RemoveSprint(int sprintId)
+    public static void RemoveSprint(string sprintId)
     {
         var con = new SQLiteConnection(ConnectionString);
         con.Open();
@@ -29,6 +29,11 @@ public static class SprintDatabaseController
 
         cmd.ExecuteNonQuery();
         con.Close();
+    }
+
+    public static void AssignToTeam(string teamid)
+    {
+
     }
 
 

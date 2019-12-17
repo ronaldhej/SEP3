@@ -8,16 +8,21 @@ namespace WebApp.SocketClient.Model
     public class SprintEntity
     {
 
-        public String Name { get; set; }
-        public String Id { get; set; }
-        public String Contributor { get; set; }
+        public string Name { get; set; }
+        public string Id { get; set; }
+        public string Task { get; set; }
+        public string AssignedToTeam { get; set; }
+        public string AssginedToPerson { get; set; }
+        public string status { get; set; }
 
-        public void SetValues(String name, String Contributor, String Id)
+        public void SetValues(string Name, string Task)
         {
-            this.Name = name;
-            this.Id = Id;
-            this.Contributor = Contributor;
+            this.Name = Name;
+            this.Task = Task;
+
         }
+
+
 
     }
 

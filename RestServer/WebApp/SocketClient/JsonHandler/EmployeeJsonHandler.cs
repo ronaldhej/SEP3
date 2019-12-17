@@ -11,11 +11,11 @@ namespace WebApp.SocketClient.JsonHandler
     public class EmployeeJsonHandler
     {
 
-        public String Add(String name)
+        public String Add(string name, string password)
         {
 
             EmployeeEntity employee = new EmployeeEntity();
-            employee.SetValues(name);
+            employee.SetValues(name, password);
             JsonPackage package = new JsonPackage();
             EmployeeRequest emp = new EmployeeRequest();
             emp.Employee = employee;
@@ -52,6 +52,22 @@ namespace WebApp.SocketClient.JsonHandler
             EmployeeRequest emp = new EmployeeRequest();
             emp.Employee = employee;
             package.Type = "GetOneRequest";
+            package.ForwardTo = "EmployeeController";
+            package.Content = emp;
+            String jsonpackage = JsonConvert.SerializeObject(package);
+
+
+            return jsonpackage;
+        }
+
+        public string CheckPassword(string id, string password)
+        {
+            EmployeeEntity employee = new EmployeeEntity();
+            employee.setId(id);
+            JsonPackage package = new JsonPackage();
+            EmployeeRequest emp = new EmployeeRequest();
+            emp.Employee = employee;
+            package.Type = "CheckPassword";
             package.ForwardTo = "EmployeeController";
             package.Content = emp;
             String jsonpackage = JsonConvert.SerializeObject(package);

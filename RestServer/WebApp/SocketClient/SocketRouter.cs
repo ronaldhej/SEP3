@@ -70,20 +70,37 @@ namespace WebApp.Client
 
         public List<SprintEntity> GetSprintByTeam(string id)
         {
-
+            List<SprintEntity> a = new List<SprintEntity>();
+            return a;
         }
 
         public List<SprintEntity> GetSprintByPerson(int id)
         {
-            
+            List<SprintEntity> a = new List<SprintEntity>();
+            return a;
         }
 
 
         //----------------------------------------------EMPLOYEE-------------------------------------------
 
-        public void AddEmployee(string name)
+
+        public string CheckPassword(string EmployeeId, string Password)
         {
-            String textToSend = employeeJsonHandler.Add(name);
+            String textToSend = employeeJsonHandler.CheckPassword(EmployeeId, Password);
+
+            TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
+            NetworkStream nwStream = client.GetStream();
+
+            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
+            nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+            client.Close();
+            return "a";
+        }
+
+        public void AddEmployee(string name, string password)
+
+        {
+            String textToSend = employeeJsonHandler.Add(name, password);
 
             TcpClient client = new TcpClient(SERVER_IP, PORT_NO);
             NetworkStream nwStream = client.GetStream();
@@ -123,9 +140,13 @@ namespace WebApp.Client
 
         }
 
-        public List<EmployeeEntity> 
+        public List<EmployeeEntity> GetAllEmployees()
+        {
+            List<EmployeeEntity> a = new List<EmployeeEntity>();
+            return a;
+        }
 
-
+       
 
         //-----------------------------BACKLOG-----------------------------------------------
 

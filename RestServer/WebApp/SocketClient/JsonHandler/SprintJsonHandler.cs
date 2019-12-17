@@ -11,12 +11,12 @@ namespace WebApp.SocketClient.JsonHandler
     public class SprintJsonHandler
     {
 
-        public String Add(String name, String task, String id)
+        public String Add(String name, String task)
 
         {
             SprintRequest sprintRequest = new SprintRequest();
             SprintEntity sprint = new SprintEntity();
-            sprint.SetValues(name, task, id);
+            sprint.SetValues(name, task);
             sprintRequest.sprint = sprint;
             JsonPackage package = new JsonPackage();
             package.Type = "AddRequest";
@@ -29,12 +29,13 @@ namespace WebApp.SocketClient.JsonHandler
 
         }
 
-        public string AssignToTeam(string id, )
+        public string AssignToTeam(string id, string AssginedToTeam)
         {
 
             SprintRequest sprintRequest = new SprintRequest();
             SprintEntity sprint = new SprintEntity();
             sprint.Id = id;
+            sprint.AssignedToTeam = AssginedToTeam;
             sprintRequest.sprint = sprint;
             JsonPackage package = new JsonPackage();
             package.Type = "AssignToTeamRequest";

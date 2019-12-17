@@ -29,10 +29,10 @@ namespace WebApp.Controllers
 
         // POST: api/Employee
         [HttpPost]
-        public void PostEmployee(String name, String contributor, int id)
+        public void PostEmployee(String name, string password)
         {
             Client.SocketRouter cl = new Client.SocketRouter();
-            cl.AddEmployee();
+
 
         }
 
@@ -42,7 +42,7 @@ namespace WebApp.Controllers
         {
 
             Client.SocketRouter cl = new Client.SocketRouter();
-            cl.RemoveEmployee();
+
 
         }
 
