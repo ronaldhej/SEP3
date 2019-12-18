@@ -41,6 +41,11 @@ namespace Viaven.Controllers
                 case ("GetEmployees"):
 
                     break;
+                case ("CheckPassword"):
+                    String verification = EmployeeDatabaseController.CheckPassword((request.Content.ToObject<EmployeeRequest>()).Employee);
+                    Socket handle = state.workSocket;
+                    socketListener.Send(handle, verification);
+                    break;
 
                 
 

@@ -10,5 +10,6 @@ namespace Viaven.Entities
     {
         public string FirstName { get; set; }
         public string Id { get; set; }
+        public string Password { get; set; }
     }
 }

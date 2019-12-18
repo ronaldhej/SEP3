@@ -18,7 +18,7 @@ public static class DbContext
 
 
         cmd.CommandText = @"CREATE TABLE employees(id integer primary key autoincrement,
-                     FirstName varchar(255))";
+                     FirstName varchar(255), Password varchar(255))";
         cmd.ExecuteNonQuery();
         cmd.CommandText = @"CREATE TABLE sprint(Id integer primary key autoincrement,
                      SprintName varchar(255), Task varchar(255), AssignedToTeam varchar(255), AssignedToPerson varchar(255))";
@@ -26,9 +26,10 @@ public static class DbContext
         cmd.CommandText = @"CREATE TABLE backlog(Id integer primary key autoincrement,
                      task varchar(255), points varchar(255), priority varchar(255))";
         cmd.ExecuteNonQuery();
-        cmd.CommandText = @"CREATE TABLE TaskAssigment(Id integer primary key autoincrement,
+        cmd.CommandText = @"CREATE TABLE taskassigment(Id integer primary key autoincrement,
                      SprintId varchar(255), AssignedToTeam varchar(255), AssignedToPerson varchar(255))";
         cmd.ExecuteNonQuery();
+
 
 
         Console.WriteLine("Table created");

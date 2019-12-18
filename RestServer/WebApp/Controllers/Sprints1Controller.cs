@@ -28,17 +28,9 @@ namespace WebApp.Controllers
         [HttpPost]
         public void PostSprint(String name, String contributor, String Id)
         {
-            List<BacklogItemEntity> items = new List<BacklogItemEntity>();
-            BacklogItemEntity backlogItem = new BacklogItemEntity();
-            BacklogItemEntity backlogItem2 = new BacklogItemEntity();
-            backlogItem.task = "lol";
-            backlogItem.points = "a";
-            backlogItem2.task = "xd";
-            backlogItem2.points = "5";
-            items.Add(backlogItem);
-            items.Add(backlogItem2);
+
             Client.SocketRouter cl = new Client.SocketRouter();
-            cl.CreateBacklog(items);
+            cl.CheckPassword("1", "xd");
 
         }
 

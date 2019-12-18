@@ -60,5 +60,29 @@ public static class EmployeeDatabaseController
 
     }
 
+    public static string CheckPassword(EmployeeEntity employee)
+    {
+        EmployeeEntity emp = new EmployeeEntity();
+        EmployeeRequest employeeRequest = new EmployeeRequest();
+        var conn = new SQLiteConnection(ConnectionString);
+        conn.Open();
+        SQLiteDataReader sqlite_datareader;
+        SQLiteCommand sqlite_cmd;
+        sqlite_cmd = conn.CreateCommand();
+        sqlite_cmd.CommandText = "SELECT * FROM employees where Id = '" + employee.Id + "'";
+        sqlite_datareader = sqlite_cmd.ExecuteReader();
+        while (sqlite_datareader.Read())
+        {
+            emp.Password = sqlite_datareader.GetString(0);
+        }
+        conn.Close();
+
+        employeeRequest.Employee = emp;
+        JsonPackage package = new JsonPackage();
+        //package.Content = employeeRequest;
+        string jsonpackage = JsonConvert.SerializeObject(package);
+        return jsonpackage;
+    }
+
 
 }
