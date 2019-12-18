@@ -1,5 +1,6 @@
 package view.user.team.createTeam;
 
+import Client.Client;
 import controller.user.team.createTeamController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -12,7 +13,7 @@ import javafx.scene.control.TextField;
 import java.util.List;
 
 public class createTeamGUI implements createTeamView {
-
+    public final Client client;
     public createTeamController createTeamController;
     public ListView employeeListView;
     public TextField filterInput;
@@ -20,7 +21,7 @@ public class createTeamGUI implements createTeamView {
     ObservableList<String> employees = FXCollections.observableArrayList();
 
     public createTeamGUI() {
-        createTeamController = new createTeamController(this);
+        createTeamController = new createTeamController(this, client = new Client());
     }
 
     @FXML

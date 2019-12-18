@@ -1,5 +1,6 @@
 package view.user.mainUser;
 
+import Client.Client;
 import controller.user.mainUserController;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -7,6 +8,7 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 public class mainUserGUI implements mainUserView {
+    public final Client client;
     public Pane dashBoardPane;
     public Pane burndownPane;
     public Pane teamPane;
@@ -16,7 +18,7 @@ public class mainUserGUI implements mainUserView {
     public Button btnLogout;
 
     public mainUserGUI() {
-        this.mainUserGUIController = new mainUserController(this);
+        this.mainUserGUIController = new mainUserController(this, client = new Client());
     }
 
 

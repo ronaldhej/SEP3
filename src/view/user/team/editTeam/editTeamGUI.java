@@ -1,5 +1,6 @@
 package view.user.team.editTeam;
 
+import Client.Client;
 import controller.user.team.editTeamController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,6 +14,7 @@ import java.util.List;
 
 public class editTeamGUI implements editTeamView {
 
+    public final Client client;
     public editTeamController editTeamController;
     public ListView employeeListView;
     public TextField filterInput;
@@ -20,7 +22,7 @@ public class editTeamGUI implements editTeamView {
     ObservableList<String> employees = FXCollections.observableArrayList();
 
     public editTeamGUI() {
-        editTeamController = new editTeamController(this);
+        editTeamController = new editTeamController(this, client = new Client());
     }
 
     @FXML
@@ -86,5 +88,6 @@ public class editTeamGUI implements editTeamView {
 
     public void saveChangesBtnPressed(ActionEvent actionEvent) throws Exception {
         editTeamController.refreshTeamGUI();
+        editTeamController.printSelectedTeamFromTeamMenu();
     }
 }

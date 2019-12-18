@@ -1,5 +1,6 @@
 package view.user.task;
 
+import Client.Client;
 import controller.user.task.taskController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -10,6 +11,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
 public class taskGUI implements taskView {
+    public final Client client;
     public TextField filterInput;
     public ListView<String> taskListView;
     taskController taskController;
@@ -17,7 +19,7 @@ public class taskGUI implements taskView {
 
 
     public taskGUI() {
-        this.taskController = new taskController(this);
+        this.taskController = new taskController(this, client = new Client());
     }
 
     @FXML

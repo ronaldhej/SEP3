@@ -2,6 +2,8 @@ module SEP_3 {
     requires javafx.fxml;
     requires javafx.controls;
     requires javafx.graphics;
+    requires google.http.client;
+    requires google.http.client.jackson2;
 
     // git ignore test
 
@@ -29,4 +31,5 @@ module SEP_3 {
     opens view.user.team.editTeam to javafx.fxml;
     opens view.user.task to javafx.fxml;
     opens view.user.task.createTask to javafx.fxml;
+    opens Model to javafx.base;
 }

@@ -1,6 +1,7 @@
 package view.login;
 
 //import client.Client;
+import Client.Client;
 import controller.login.loginController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,17 +11,16 @@ import javafx.stage.Stage;
 
 public class loginGUI implements loginView {
 
+    public final Client client;
     public Button btnLogin;
     private controller.login.loginController loginController;
-    //private Client client;
     @FXML
     private TextField txtId;
     @FXML
     private TextField txtPassword;
 
     public loginGUI() throws Exception {
-        //client = new Client();
-        this.loginController = new loginController(this);
+        this.loginController = new loginController(this, client = new Client());
     }
 
 

@@ -1,22 +1,20 @@
 package controller.login;
 
-//import client.Client;
-//import domain.model.loggedInEmployee.currentEmployee;
+import Client.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import view.login.loginView;
 
 public class loginController {
+    public Client client;
     public loginView view;
     // public Client client;
 
-    public loginController(loginView view) {
+    public loginController(loginView view, Client client) {
         this.view = view;
-       // this.client = client;
+        this.client = client;
     }
 
     public void loginBtnPressedNoVerify() {

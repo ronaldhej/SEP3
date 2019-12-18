@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="808.0" prefWidth="1038.0" style="-fx-background-color: #CDC6AE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.team.teamGUI">
+<AnchorPane prefHeight="808.0" prefWidth="1038.0" style="-fx-background-color: #EEEEEE;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.team.teamGUI">
     <children>
         <Label layoutX="451.0" layoutY="31.0" text="Teams">
             <font>
@@ -13,13 +13,14 @@
         </Label>
       <TableView fx:id="teamTableView" layoutX="70.0" layoutY="110.0" prefHeight="356.0" prefWidth="900.0">
         <columns>
-          <TableColumn prefWidth="300.0" text="Tasks" />
-          <TableColumn prefWidth="450.0" text="Members" />
-            <TableColumn prefWidth="150.0" text="Duration Worked" />
+          <TableColumn fx:id="taskColumn" prefWidth="300.0" text="Task" />
+          <TableColumn fx:id="membersColumn" prefWidth="450.0" text="Members" />
+            <TableColumn fx:id="durationWorkedColumn" prefWidth="150.0" text="Duration Worked" />
         </columns>
       </TableView>
-      <Button fx:id="createTeamBtn" layoutX="70.0" layoutY="479.0" mnemonicParsing="false" onAction="#createTeamBtnPressed" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Create Team" textFill="#cdc6ae" />
-      <Button layoutX="218.0" layoutY="479.0" mnemonicParsing="false" onAction="#deleteTeamBtnPressed" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Delete Team" textFill="#cdc6ae" />
-      <Button layoutX="369.0" layoutY="479.0" mnemonicParsing="false" onAction="#modifyTeamBtnPressed" prefHeight="50.0" prefWidth="121.0" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Modify Team" textFill="#cdc6ae" />
+      <Button fx:id="createTeamBtn" layoutX="70.0" layoutY="479.0" mnemonicParsing="false" onAction="#createTeamBtnPressed" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Create Team" />
+      <Button layoutX="218.0" layoutY="479.0" mnemonicParsing="false" onAction="#deleteTeamBtnPressed" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Delete Team" />
+      <Button layoutX="369.0" layoutY="479.0" mnemonicParsing="false" onAction="#editTeamBtnPressed" prefHeight="33.0" prefWidth="121.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Edit Team" />
+      <Button layoutX="514.0" layoutY="479.0" mnemonicParsing="false" onAction="#createEmployeeBtnPressed" prefHeight="33.0" prefWidth="148.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Create Employee" />
     </children>
 </AnchorPane>

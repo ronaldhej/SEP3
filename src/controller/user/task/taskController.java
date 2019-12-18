@@ -1,5 +1,6 @@
 package controller.user.task;
 
+import Client.Client;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,9 +9,11 @@ import view.user.task.taskView;
 
 public class taskController {
     public static taskView view;
+    public Client client;
 
-    public taskController(taskView view) {
+    public taskController(taskView view, Client client) {
         this.view = view;
+        this.client = client;
     }
 
     public static void refresh() {

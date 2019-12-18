@@ -3,17 +3,23 @@ package Model;
 import java.util.List;
 
 public class Team {
-    public String teamID;
+    public int teamID;
     public List<String> members;
     public List<String> teamTasks;
     public int timeWorked;
 
+    public Team(int teamID, List<String> members, List<String> teamTasks, int timeWorked) {
+        this.teamID = teamID;
+        this.members = members;
+        this.teamTasks = teamTasks;
+        this.timeWorked = timeWorked;
+    }
 
-    public String getTeamID() {
+    public int getTeamID() {
         return teamID;
     }
 
-    public void setTeamID(String teamID) {
+    public void setTeamID(int teamID) {
         this.teamID = teamID;
     }
 
@@ -44,7 +50,10 @@ public class Team {
     @Override
     public String toString() {
         return "Team{" +
-                "members=" + members +
+                "teamID='" + teamID + '\'' +
+                ", members=" + members +
+                ", teamTasks=" + teamTasks +
+                ", timeWorked=" + timeWorked +
                 '}';
     }
 
