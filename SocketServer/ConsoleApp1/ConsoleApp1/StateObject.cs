@@ -21,6 +21,7 @@ namespace Viaven
 
         public AsynchronousSocketListener()
         {
+
         }
 
         public void StartListening()
@@ -84,10 +85,9 @@ namespace Viaven
                 content = state.sb.ToString();  
                     Console.WriteLine("Read {0} bytes from socket. \n Data : {1}",
                         content.Length, content);
-
+                Console.WriteLine(handler.RemoteEndPoint);
                 var controller = new RequestHandler();
-                    controller.ForwardRequest(content);
-
+                    controller.ForwardRequest(content, handler);
             }
         }
 
@@ -110,6 +110,7 @@ namespace Viaven
                 handler.Close();
 
             }
+        
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());

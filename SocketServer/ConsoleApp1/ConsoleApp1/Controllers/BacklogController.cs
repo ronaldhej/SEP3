@@ -7,12 +7,14 @@ using Viaven.Requests;
 using Newtonsoft.Json;
 using Viaven.Requests;
 using Viaven.Entities;
+using System.Net;
+using System.Net.Sockets;
 
 namespace Viaven.Controllers
 {
     class BacklogController
     {
-        public void HandleRequest(string json)
+        public void HandleRequest(string json, Socket handler)
         {
             var request = JsonConvert.DeserializeObject<JsonPackage>(json);
 

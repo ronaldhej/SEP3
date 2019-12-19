@@ -73,15 +73,12 @@ public static class EmployeeDatabaseController
         sqlite_datareader = sqlite_cmd.ExecuteReader();
         while (sqlite_datareader.Read())
         {
-            emp.Password = sqlite_datareader.GetString(0);
+            emp.Password = sqlite_datareader.GetString(2);
         }
         conn.Close();
 
-        employeeRequest.Employee = emp;
-        JsonPackage package = new JsonPackage();
-        //package.Content = employeeRequest;
-        string jsonpackage = JsonConvert.SerializeObject(package);
-        return jsonpackage;
+        string password = emp.Password;
+        return password;
     }
 
 

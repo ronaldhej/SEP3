@@ -39,7 +39,7 @@ namespace WebApp.Client
             client.Close();
         }
 
-        public void RemoveSprint(int id)
+        public void RemoveSprint(string id)
         {
 
         }
@@ -74,7 +74,7 @@ namespace WebApp.Client
             return a;
         }
 
-        public List<SprintEntity> GetSprintByPerson(int id)
+        public List<SprintEntity> GetSprintByPerson(string id)
         {
             List<SprintEntity> a = new List<SprintEntity>();
             return a;
@@ -93,8 +93,12 @@ namespace WebApp.Client
 
             byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
+
+            byte[] bytesToRead = new byte[client.ReceiveBufferSize];
+            int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
+            string a = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
             client.Close();
-            return "a";
+            return a;
         }
 
         public void AddEmployee(string name, string password)
@@ -161,6 +165,14 @@ namespace WebApp.Client
             client.Close();
 
 
+
+        }
+
+        //------------------------TEAM-------------------
+
+        
+        public void Send()
+        {
 
         }
 

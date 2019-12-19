@@ -5,13 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using Viaven.Requests;
 using Newtonsoft.Json;
+using System.Net;
+using System.Net.Sockets;
 
 
 namespace Viaven.Controllers
 {
     class SprintController
     {
-        public void HandleRequest(string json)
+        public void HandleRequest(string json, Socket handler)
         {
             var request = JsonConvert.DeserializeObject<JsonPackage>(json);
 

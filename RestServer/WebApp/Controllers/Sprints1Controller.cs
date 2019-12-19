@@ -25,7 +25,7 @@ namespace WebApp.Controllers
 
 
         // POST: api/Sprints1/
-        [HttpPost]
+        [HttpPost("PostSprint")]
         public void PostSprint(String name, String contributor, String Id)
         {
 
@@ -34,13 +34,63 @@ namespace WebApp.Controllers
 
         }
 
+
+        [HttpPost("PostEmployee")]
+        public void PostEmployee(String name, string password)
+        {
+            Client.SocketRouter cl = new Client.SocketRouter();
+
+
+        }
+
         // DELETE: api/Sprints1/5
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteSprint{id}")]
         public void DeleteSprint(int id)
         {
 
             Client.SocketRouter cl = new Client.SocketRouter();
 
+
+        }
+
+        [HttpPost("AddEmployee")]
+        public void AddEmployee(String name, string password)
+        {
+
+
+
+        }
+        [HttpDelete("RemoveSprintById{id}")]
+        public void RemoveSprint(int id)
+        {
+
+        }
+        [HttpGet("GetSprintbyID{id}")]
+        public void GetSprint(string id)
+        {
+
+        }
+        [HttpPost("AssignToTeam")]
+        public void AssignToTeam(string id, string AssignedToTeam)
+        {
+
+        }
+        [HttpPost("AssignToPerson")]
+        public void AssignToPerson(string id, string AssignedToTeam)
+        {
+
+        }
+
+
+        [HttpDelete("RemoveEmployee{id}")]
+        public void RemoveEmployee(string id)
+        {
+
+        }
+
+        [HttpGet("CreateBacklog")]
+        public void CreateBacklog(List<BacklogItemEntity> items)
+        {
 
         }
 

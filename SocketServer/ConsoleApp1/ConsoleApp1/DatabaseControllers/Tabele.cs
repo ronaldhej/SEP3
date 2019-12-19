@@ -17,7 +17,7 @@ public static class DbContext
         var cmd = new SQLiteCommand(con);
 
 
-        cmd.CommandText = @"CREATE TABLE employees(id integer primary key autoincrement,
+        cmd.CommandText = @"CREATE TABLE employees(Id integer primary key autoincrement,
                      FirstName varchar(255), Password varchar(255))";
         cmd.ExecuteNonQuery();
         cmd.CommandText = @"CREATE TABLE sprint(Id integer primary key autoincrement,

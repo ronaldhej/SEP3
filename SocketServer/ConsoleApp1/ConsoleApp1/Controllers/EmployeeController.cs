@@ -7,6 +7,8 @@ using Viaven.Requests;
 using Newtonsoft.Json;
 using System.Net.Sockets;
 using Viaven;
+using System.Net;
+using System.Net.Sockets;
 
 namespace Viaven.Controllers
 
@@ -14,13 +16,12 @@ namespace Viaven.Controllers
     class EmployeeController
     {
 
-        public Socket workSocket = null;
-        public const int BufferSize = 1024;
-        public byte[] buffer = new byte[BufferSize];
-        public StringBuilder sb = new StringBuilder();
-        StateObject state = new StateObject();
-        AsynchronousSocketListener socketListener = new AsynchronousSocketListener();
-        public void HandleRequests(string json)
+        const int PORT_NO = 2000;
+        const string SERVER_IP = "127.0.0.1";
+        AsynchronousSocketListener socket = new AsynchronousSocketListener(); 
+
+
+        public void HandleRequests(string json, Socket handler)
 
         {
             var request = JsonConvert.DeserializeObject <JsonPackage>(json);
@@ -35,16 +36,16 @@ namespace Viaven.Controllers
                     break;
                 case ("GetOneRequest"):
                     String toSend = EmployeeDatabaseController.GetOneEmployee((request.Content.ToObject<EmployeeRequest>()).Employee);
-                    Socket handler = state.workSocket;
-                    socketListener.Send(handler ,toSend);
+                    //socketListener.Send(handler ,toSend);
                     break;
                 case ("GetEmployees"):
 
                     break;
                 case ("CheckPassword"):
                     String verification = EmployeeDatabaseController.CheckPassword((request.Content.ToObject<EmployeeRequest>()).Employee);
-                    Socket handle = state.workSocket;
-                    socketListener.Send(handle, verification);
+                    socket.Send(handler, verification);
+                    
+
                     break;
 
                 

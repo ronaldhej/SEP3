@@ -64,6 +64,7 @@ namespace WebApp.SocketClient.JsonHandler
         {
             EmployeeEntity employee = new EmployeeEntity();
             employee.setId(id);
+            employee.Password = password;
             JsonPackage package = new JsonPackage();
             EmployeeRequest emp = new EmployeeRequest();
             emp.Employee = employee;
