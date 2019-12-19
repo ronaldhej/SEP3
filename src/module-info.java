@@ -4,6 +4,7 @@ module SEP_3 {
     requires javafx.graphics;
     requires google.http.client;
     requires google.http.client.jackson2;
+    requires com.google.gson;
 
     // git ignore test
 

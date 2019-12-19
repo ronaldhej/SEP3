@@ -29,27 +29,27 @@ namespace WebApp.Controllers
         public void PostSprint(String name, String contributor, String Id)
         {
 
-            Client.SocketRouter cl = new Client.SocketRouter();
-            cl.CheckPassword("1", "xd");
+
 
         }
 
 
-        [HttpPost("PostEmployee")]
+        [HttpPost("PostEmployee{name, password}")]
         public void PostEmployee(String name, string password)
         {
             Client.SocketRouter cl = new Client.SocketRouter();
+            cl.CheckPassword(name, password);
 
 
         }
 
         // DELETE: api/Sprints1/5
-        [HttpDelete("DeleteSprint{id}")]
-        public void DeleteSprint(int id)
+        [HttpDelete("DeleteSprint/id/password")]
+        public void DeleteSprint(string id, string password)
         {
 
             Client.SocketRouter cl = new Client.SocketRouter();
-
+            cl.CheckPassword(id, password);
 
         }
 
@@ -61,9 +61,10 @@ namespace WebApp.Controllers
 
         }
         [HttpDelete("RemoveSprintById{id}")]
-        public void RemoveSprint(int id)
+        public void RemoveSprint(string id)
         {
-
+            Client.SocketRouter cl = new Client.SocketRouter();
+            cl.CheckPassword(id, "a");
         }
         [HttpGet("GetSprintbyID{id}")]
         public void GetSprint(string id)

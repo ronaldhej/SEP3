@@ -7,6 +7,7 @@ import com.google.api.client.http.HttpRequestFactory;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.http.json.JsonHttpContent;
 import com.google.api.client.json.jackson2.JacksonFactory;
+import com.google.gson.Gson;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -19,7 +20,7 @@ public class Client {
     private HttpRequestFactory requestFactory;
 
     public Client() {
-        this.url = "https://localhost:44368/api/User";
+        this.url = "http://localhost:54206/api/Sprint/";
         requestFactory
                 = new NetHttpTransport().createRequestFactory();
     }
@@ -29,21 +30,22 @@ public class Client {
         json.put("contributor", contributor);
         json.put("Id",Id);
         json.put("name",name);
-        HttpContent httpContent = new JsonHttpContent(new JacksonFactory(), json);
+        Gson gson = new Gson();
+        HttpContent httpContent = new JsonHttpContent(new JacksonFactory(), );
         HttpRequest requestPost = requestFactory.buildPostRequest(
                 new GenericUrl(url+"PostSprint"),httpContent);
         requestPost.execute();
     }
     public void PostEmployee(String name, String password) throws IOException {
         Map<String, String> json = new HashMap<String, String>();
-        json.put("password", password);
-        json.put("name",name);
+        json.put("name", name);
+        json.put("password",password);
         HttpContent httpContent = new JsonHttpContent(new JacksonFactory(), json);
         HttpRequest requestPost = requestFactory.buildPostRequest(
                 new GenericUrl(url+"PostEmployee"),httpContent);
         requestPost.execute();
     }
-    public void DeleteSprint(int id) throws IOException {
+    public void DeleteSprint(String id) throws IOException {
         HttpRequest delete =
                 requestFactory.buildDeleteRequest(new GenericUrl(url+"DeleteSprint/"+id));
         delete.execute();
@@ -57,7 +59,7 @@ public class Client {
                 new GenericUrl(url+"PostEmployee"),httpContent);
         requestPost.execute();
     }
-    public void RemoveSprint(int id) throws IOException {
+    public void RemoveSprint(String id) throws IOException {
         HttpRequest delete =
                 requestFactory.buildDeleteRequest(new GenericUrl(url+"RemoveSprintById/"+id));
         delete.execute();
