@@ -12,9 +12,5 @@ namespace Viaven.Requests
     {
         public EmployeeEntity Employee;
 
-        public static implicit operator JObject(EmployeeRequest v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

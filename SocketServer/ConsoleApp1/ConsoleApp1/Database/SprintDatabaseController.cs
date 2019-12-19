@@ -14,13 +14,13 @@ public static class SprintDatabaseController
         var con = new SQLiteConnection(ConnectionString);
         con.Open();
         var cmd = new SQLiteCommand(con);
-        cmd.CommandText = "INSERT INTO sprint(SprintName, Contributor) VALUES( '" + sprint.Name + "'" + sprint.constributor + "')";
+        cmd.CommandText = "INSERT INTO sprint(SprintName, Task, BacklogId) VALUES('" + sprint.Name + "', '" + sprint.Task + sprint.BacklogId + "');";
         cmd.ExecuteNonQuery();
         con.Close();
 
     }
 
-    public static void RemoveSprint(int sprintId)
+    public static void RemoveSprint(string sprintId)
     {
         var con = new SQLiteConnection(ConnectionString);
         con.Open();
@@ -29,6 +29,11 @@ public static class SprintDatabaseController
 
         cmd.ExecuteNonQuery();
         con.Close();
+    }
+
+    public static void AssignToTeam(string teamid)
+    {
+
     }
 
 

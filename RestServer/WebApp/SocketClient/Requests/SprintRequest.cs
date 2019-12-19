@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using WebApp.SocketClient.Model;
+using Newtonsoft.Json;
 
 namespace WebApp.SocketClient.Requests
 {
-    public class AddEmployeeRequest
+    public class SprintRequest
     {
-        public EmployeeEntity Employee = new EmployeeEntity();
+
+        public SprintEntity sprint = new SprintEntity();
 
     }
 }
-
-

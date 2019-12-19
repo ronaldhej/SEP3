@@ -37,7 +37,14 @@ namespace Viaven.Controllers
                     String toSend = EmployeeDatabaseController.GetOneEmployee((request.Content.ToObject<EmployeeRequest>()).Employee);
                     Socket handler = state.workSocket;
                     socketListener.Send(handler ,toSend);
+                    break;
+                case ("GetEmployees"):
 
+                    break;
+                case ("CheckPassword"):
+                    String verification = EmployeeDatabaseController.CheckPassword((request.Content.ToObject<EmployeeRequest>()).Employee);
+                    Socket handle = state.workSocket;
+                    socketListener.Send(handle, verification);
                     break;
 
                 

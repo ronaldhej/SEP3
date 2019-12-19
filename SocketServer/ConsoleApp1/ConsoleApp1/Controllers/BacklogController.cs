@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Viaven.Requests;
 using Newtonsoft.Json;
-
+using Viaven.Requests;
+using Viaven.Entities;
 
 namespace Viaven.Controllers
 {
-    class SprintController
+    class BacklogController
     {
         public void HandleRequest(string json)
         {
@@ -17,14 +18,13 @@ namespace Viaven.Controllers
 
             switch (request.Type)
             {
-                case ("AddRequest"):
-                    SprintDatabaseController.AddNewSprint((request.Content.ToObject<SprintRequest>()).Sprint);
+                case ("CreateRequest"):
+                    BacklogEntity backlogEntity = new BacklogEntity();
+                    backlogEntity = request.Content.ToObject<BacklogRequest>().backlogEntity;
+                    BacklogDatabaseController.CreateBacklog(backlogEntity);
                     break;
                 case ("RemoveRequest"):
-                     //SprintDatabaseController.RemoveSprint((request.Content.ToObject<RemoveSprintRequest>()).Sprint);
-                    break;
-                case ("AssignRequest"):
-                    SprintDatabaseController.AssignToTeam((request.Content.ToObject<SprintRequest>().Sprint.Id));
+                    //BacklogDatabaseController.RemoveSprint((request.Content.ToObject<RemoveSprintRequest>()).Sprint);
                     break;
 
             }

@@ -1,12 +1,13 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp1.Requests
+namespace Viaven.Entities
 {
-    class Class1
+    public class BacklogEntity
     {
+        public List<BacklogItemEntity> items;
     }
 }

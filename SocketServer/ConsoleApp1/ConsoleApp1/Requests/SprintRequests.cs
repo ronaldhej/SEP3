@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Viaven.Entities;
 
-namespace Viaven.Requests.SprintRequests
+namespace Viaven.Requests
 {
-    class AddSprintRequest
+    class SprintRequest
     {
         public SprintEntity Sprint;
     }

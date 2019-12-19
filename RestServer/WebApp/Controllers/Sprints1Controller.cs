@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApp.Data;
 using WebApp.Client;
-
+using WebApp.SocketClient.Model;
 
 namespace WebApp.Controllers
 {
@@ -25,11 +25,12 @@ namespace WebApp.Controllers
 
 
         // POST: api/Sprints1/
-        [HttpPost("{name, contributor, id}")]
-        public void PostSprint(String name, String contributor, int id)
+        [HttpPost]
+        public void PostSprint(String name, String contributor, String Id)
         {
-            Client.Client cl = new Client.Client();
-            cl.AddEmployee();
+
+            Client.SocketRouter cl = new Client.SocketRouter();
+            cl.CheckPassword("1", "xd");
 
         }
 
@@ -38,8 +39,8 @@ namespace WebApp.Controllers
         public void DeleteSprint(int id)
         {
 
-            Client.Client cl = new Client.Client();
-            cl.RemoveEmployee();
+            Client.SocketRouter cl = new Client.SocketRouter();
+
 
         }
 

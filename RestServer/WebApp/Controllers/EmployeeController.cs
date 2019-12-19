@@ -29,10 +29,10 @@ namespace WebApp.Controllers
 
         // POST: api/Employee
         [HttpPost]
-        public void PostEmployee(String name, String contributor, int id)
+        public void PostEmployee(String name, string password)
         {
-            Client.Client cl = new Client.Client();
-            cl.AddEmployee();
+            Client.SocketRouter cl = new Client.SocketRouter();
+
 
         }
 
@@ -41,8 +41,8 @@ namespace WebApp.Controllers
         public void DeleteSprint(int id)
         {
 
-            Client.Client cl = new Client.Client();
-            cl.RemoveEmployee();
+            Client.SocketRouter cl = new Client.SocketRouter();
+
 
         }
 
