@@ -49,6 +49,19 @@ public class teamController {
         }
     }
 
+    public void createEmployeeWindow() throws Exception {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/user/team/createEmployee/createEmployeeGUI.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+            primaryStage.setScene(scene);
+            primaryStage.show();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void deleteSelectedTeam() {
         view.getSelectedTeam();
     }

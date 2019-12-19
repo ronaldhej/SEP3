@@ -3,6 +3,8 @@ package controller.user.team;
 import Client.Client;
 import view.user.team.createEmployee.createEmployeeView;
 
+import java.io.IOException;
+
 public class createEmployeeController {
     public Client client;
     public createEmployeeView view;
@@ -13,6 +15,8 @@ public class createEmployeeController {
     }
 
 
-    public void createEmployee() {
+    public void createEmployee() throws IOException {
+        client.PostEmployee(view.getName(), view.getPassword());
+        view.closeWindow();
     }
 }

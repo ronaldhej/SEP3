@@ -42,6 +42,7 @@ public class taskGUI implements taskView {
     }
 
     public void editTaskBtnPressed(ActionEvent actionEvent) {
+        taskController.editTaskWindow();
     }
 
     public void removeTaskBtnPressed(ActionEvent actionEvent) {

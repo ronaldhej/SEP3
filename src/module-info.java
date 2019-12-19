@@ -18,6 +18,8 @@ module SEP_3 {
     exports view.user.team.editTeam to javafx.fxml;
     exports view.user.task to javafx.fxml;
     exports view.user.task.createTask to javafx.fxml;
+    exports view.user.task.editTask to javafx.fxml;
+    exports view.user.team.createEmployee to javafx.fxml;
     exports Model to java.base;
 
 
@@ -31,5 +33,7 @@ module SEP_3 {
     opens view.user.team.editTeam to javafx.fxml;
     opens view.user.task to javafx.fxml;
     opens view.user.task.createTask to javafx.fxml;
+    opens view.user.task.editTask to javafx.fxml;
+    opens view.user.team.createEmployee to javafx.fxml;
     opens Model to javafx.base;
 }

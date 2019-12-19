@@ -11,6 +11,9 @@ public class editTaskGUI implements editTaskView {
     public editTaskController editTaskController;
     public Button saveButton;
     public TextField taskInput;
+    public Button createButton;
+    public TextField pointsInput;
+    public TextField priorityInput;
 
     public editTaskGUI() {
         this.editTaskController = new editTaskController(this, client = new Client());

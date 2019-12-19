@@ -11,9 +11,9 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <TextField fx:id="taskInput" layoutX="117.0" layoutY="63.0" prefHeight="26.0" prefWidth="206.0" style="-fx-background-radius: 30;" />
-      <Button fx:id="saveButton" layoutX="488.0" layoutY="96.0" mnemonicParsing="false" onAction="#createEmployeeBtnPressed" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Create" />
-      <TextField fx:id="taskInput1" layoutX="117.0" layoutY="104.0" prefHeight="26.0" prefWidth="206.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="nameInput" layoutX="117.0" layoutY="63.0" prefHeight="26.0" prefWidth="206.0" style="-fx-background-radius: 30;" />
+      <Button fx:id="createEmployeeButton" layoutX="488.0" layoutY="96.0" mnemonicParsing="false" onAction="#createEmployeeBtnPressed" prefHeight="42.0" prefWidth="79.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 30;" text="Create" />
+      <TextField fx:id="passwordInput" layoutX="117.0" layoutY="104.0" prefHeight="26.0" prefWidth="206.0" style="-fx-background-radius: 30;" />
       <Label layoutX="27.0" layoutY="65.0" text="Name">
          <font>
             <Font size="19.0" />

@@ -1,5 +1,8 @@
 package view.user.task.createTask;
 
 public interface createTaskView {
-    public void closeWindow();
+     void closeWindow();
+     String getTask();
+     String getPoints();
+     String getPriority();
 }

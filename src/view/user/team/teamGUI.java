@@ -67,6 +67,7 @@ public class teamGUI implements teamView {
         System.out.println("Refreshed successfully");
     }
 
-    public void createEmployeeBtnPressed(ActionEvent actionEvent) {
+    public void createEmployeeBtnPressed(ActionEvent actionEvent) throws Exception {
+        teamController.createEmployeeWindow();
     }
 }

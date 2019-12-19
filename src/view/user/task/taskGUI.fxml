@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="808.0" prefWidth="1038.0" style="-fx-background-color: #CDC6AE" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.task.taskGUI">
+<AnchorPane prefHeight="808.0" prefWidth="1038.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.user.task.taskGUI">
    <children>
       <ListView fx:id="taskListView" layoutX="14.0" layoutY="14.0" prefHeight="733.0" prefWidth="1009.0" />
       <Label layoutX="14.0" layoutY="761.0" text="Filter">
@@ -12,10 +12,10 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <TextField fx:id="filterInput" layoutX="111.0" layoutY="763.0" />
-      <Button layoutX="339.0" layoutY="763.0" mnemonicParsing="false" onAction="#createTaskBtnPressed" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Create Task" textFill="#cdc6ae" />
-      <Button layoutX="463.0" layoutY="763.0" mnemonicParsing="false" onAction="#editTaskBtnPressed" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Edit Task" textFill="#cdc6ae" />
-      <Button layoutX="567.0" layoutY="763.0" mnemonicParsing="false" onAction="#removeTaskBtnPressed" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Remove Task" textFill="#cdc6ae" />
-      <Button layoutX="695.0" layoutY="763.0" mnemonicParsing="false" onAction="#assignTaskBtnPressed" style="-fx-background-color: #38686A; -fx-background-radius: 30;" text="Assign Task" textFill="#cdc6ae" />
+      <TextField fx:id="filterInput" layoutX="111.0" layoutY="763.0" style="-fx-background-radius: 30;" />
+      <Button layoutX="339.0" layoutY="763.0" mnemonicParsing="false" onAction="#createTaskBtnPressed" style="-fx-background-color: #EEEEEE; -fx-background-radius: 30;" text="Create Task" />
+      <Button layoutX="463.0" layoutY="763.0" mnemonicParsing="false" onAction="#editTaskBtnPressed" style="-fx-background-color: #EEEEEE; -fx-background-radius: 30;" text="Edit Task" />
+      <Button layoutX="567.0" layoutY="763.0" mnemonicParsing="false" onAction="#removeTaskBtnPressed" style="-fx-background-color: #EEEEEE; -fx-background-radius: 30;" text="Remove Task" />
+      <Button layoutX="695.0" layoutY="763.0" mnemonicParsing="false" onAction="#assignTaskBtnPressed" style="-fx-background-color: #EEEEEE; -fx-background-radius: 30;" text="Assign Task" />
    </children>
 </AnchorPane>

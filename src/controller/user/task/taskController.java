@@ -35,6 +35,19 @@ public class taskController {
         }
     }
 
+    public void editTaskWindow() {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/view/user/task/editTask/editTaskGUI.fxml"));
+            Scene scene = new Scene(root);
+            Stage primaryStage = new Stage();
+
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
 
