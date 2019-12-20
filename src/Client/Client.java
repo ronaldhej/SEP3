@@ -31,7 +31,7 @@ public class Client {
         json.put("Id",Id);
         json.put("name",name);
         Gson gson = new Gson();
-        HttpContent httpContent = new JsonHttpContent(new JacksonFactory(), );
+        HttpContent httpContent = new JsonHttpContent(new JacksonFactory(), "a");
         HttpRequest requestPost = requestFactory.buildPostRequest(
                 new GenericUrl(url+"PostSprint"),httpContent);
         requestPost.execute();
